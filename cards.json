@@ -1,0 +1,318 @@
+[
+  {
+    "company": "Uber",
+    "prohibited_words": ["ride-share", "Lyft", "gig economy", "app", "driver"],
+    "instant_death": ["Lyft"],
+    "category": "transportation",
+    "difficulty": 1
+  },
+  {
+    "company": "Airbnb",
+    "prohibited_words": ["home", "rent", "hotel", "travel", "host"],
+    "instant_death": ["Vrbo", "Booking.com"],
+    "category": "travel",
+    "difficulty": 1
+  },
+  {
+    "company": "Netflix",
+    "prohibited_words": ["stream", "movie", "TV", "subscription", "binge"],
+    "instant_death": ["Hulu", "Disney+"],
+    "category": "entertainment",
+    "difficulty": 1
+  },
+  {
+    "company": "Tesla",
+    "prohibited_words": ["electric", "car", "Elon", "battery", "vehicle"],
+    "instant_death": ["Rivian", "Lucid"],
+    "category": "automotive",
+    "difficulty": 1
+  },
+  {
+    "company": "Zappos",
+    "prohibited_words": ["shoes", "Amazon", "customer service", "online", "footwear"],
+    "instant_death": ["Amazon", "Foot Locker"],
+    "category": "retail",
+    "difficulty": 2
+  },
+  {
+    "company": "Zenni",
+    "prohibited_words": ["glasses", "eyewear", "cheap", "online", "frames"],
+    "instant_death": ["Warby Parker", "EyeBuyDirect"],
+    "category": "retail",
+    "difficulty": 3
+  },
+  {
+    "company": "Spotify",
+    "prohibited_words": ["music", "streaming", "playlist", "artist", "audio"],
+    "instant_death": ["Apple Music", "Amazon Music", "Tidal"],
+    "category": "entertainment",
+    "difficulty": 1
+  },
+  {
+    "company": "TikTok",
+    "prohibited_words": ["video", "short", "dance", "app", "scroll"],
+    "instant_death": ["Instagram Reels", "YouTube Shorts"],
+    "category": "social media",
+    "difficulty": 1
+  },
+  {
+    "company": "Duolingo",
+    "prohibited_words": ["language", "learn", "app", "Spanish", "owl"],
+    "instant_death": ["Babbel", "Rosetta Stone"],
+    "category": "education",
+    "difficulty": 2
+  },
+  {
+    "company": "Reddit",
+    "prohibited_words": ["forum", "subreddit", "thread", "karma", "upvote"],
+    "instant_death": ["Quora", "4chan"],
+    "category": "social media",
+    "difficulty": 2
+  },
+  {
+    "company": "Peloton",
+    "prohibited_words": ["bike", "exercise", "fitness", "instructor", "subscription"],
+    "instant_death": ["NordicTrack", "SoulCycle"],
+    "category": "fitness",
+    "difficulty": 2
+  },
+  {
+    "company": "Glossier",
+    "prohibited_words": ["makeup", "beauty", "skincare", "Instagram", "millennial"],
+    "instant_death": ["Fenty Beauty", "Sephora"],
+    "category": "retail",
+    "difficulty": 2
+  },
+  {
+    "company": "OnlyFans",
+    "prohibited_words": ["subscription", "content", "creator", "adult", "fans"],
+    "instant_death": ["Patreon", "FanCentro"],
+    "category": "entertainment",
+    "difficulty": 3
+  },
+  {
+    "company": "Snapchat",
+    "prohibited_words": ["chat", "photo", "disappear", "streak", "filter"],
+    "instant_death": ["Instagram", "Facebook Messenger"],
+    "category": "social media",
+    "difficulty": 1
+  },
+  {
+    "company": "Tinder",
+    "prohibited_words": ["date", "swipe", "match", "app", "love"],
+    "instant_death": ["Bumble", "Hinge"],
+    "category": "social media",
+    "difficulty": 1
+  },
+  {
+    "company": "Patagonia",
+    "prohibited_words": ["jacket", "outdoor", "clothing", "sustainable", "gear"],
+    "instant_death": ["The North Face", "Columbia"],
+    "category": "retail",
+    "difficulty": 2
+  },
+  {
+    "company": "Yeti",
+    "prohibited_words": ["cooler", "drink", "ice", "insulated", "tumbler"],
+    "instant_death": ["RTIC", "Pelican"],
+    "category": "retail",
+    "difficulty": 2
+  },
+  {
+    "company": "Casper",
+    "prohibited_words": ["mattress", "bed", "foam", "sleep", "box"],
+    "instant_death": ["Purple", "Tuft & Needle"],
+    "category": "retail",
+    "difficulty": 2
+  },
+  {
+    "company": "Canva",
+    "prohibited_words": ["design", "graphics", "template", "drag-and-drop", "presentation"],
+    "instant_death": ["Adobe Spark", "Piktochart"],
+    "category": "software",
+    "difficulty": 2
+  },
+  {
+    "company": "Robinhood",
+    "prohibited_words": ["stocks", "trading", "investment", "app", "commission"],
+    "instant_death": ["E*TRADE", "Webull"],
+    "category": "finance",
+    "difficulty": 2
+  },
+  {
+    "company": "Warby Parker",
+    "prohibited_words": ["glasses", "vision", "frames", "eyewear", "try-on"],
+    "instant_death": ["Zenni", "EyeBuyDirect"],
+    "category": "retail",
+    "difficulty": 2
+  },
+  {
+    "company": "Instacart",
+    "prohibited_words": ["grocery", "delivery", "order", "shopper", "food"],
+    "instant_death": ["Shipt", "Amazon Fresh"],
+    "category": "logistics",
+    "difficulty": 2
+  },
+  {
+    "company": "Stripe",
+    "prohibited_words": ["payment", "checkout", "transaction", "online", "API"],
+    "instant_death": ["PayPal", "Square"],
+    "category": "finance",
+    "difficulty": 1
+  },
+  {
+    "company": "WeWork",
+    "prohibited_words": ["office", "space", "coworking", "rent", "desk"],
+    "instant_death": ["Regus", "Knotel"],
+    "category": "real estate",
+    "difficulty": 2
+  },
+  {
+    "company": "DoorDash",
+    "prohibited_words": ["delivery", "food", "restaurant", "order", "driver"],
+    "instant_death": ["Uber Eats", "Grubhub"],
+    "category": "logistics",
+    "difficulty": 1
+  },
+  {
+    "company": "OpenAI",
+    "prohibited_words": ["artificial intelligence", "GPT", "chatbot", "language model", "AI"],
+    "instant_death": ["Google DeepMind", "Anthropic"],
+    "category": "technology",
+    "difficulty": 3
+  },
+  {
+    "company": "Nvidia",
+    "prohibited_words": ["graphics", "GPU", "chips", "gaming", "AI"],
+    "instant_death": ["AMD", "Intel"],
+    "category": "technology",
+    "difficulty": 2
+  },
+  {
+    "company": "Tumblr",
+    "prohibited_words": ["blog", "microblogging", "posts", "social media", "dashboard"],
+    "instant_death": ["WordPress", "Medium"],
+    "category": "social media",
+    "difficulty": 3
+  },
+  {
+    "company": "Charles Schwab",
+    "prohibited_words": ["investment", "brokerage", "stocks", "financial", "advisor"],
+    "instant_death": ["Fidelity", "Vanguard"],
+    "category": "finance",
+    "difficulty": 3
+  },
+  {
+    "company": "Linux",
+    "prohibited_words": ["operating system", "open source", "kernel", "Unix", "software"],
+    "instant_death": ["Windows", "macOS"],
+    "category": "technology",
+    "difficulty": 2
+  },
+  {
+    "company": "Oprah Winfrey",
+    "prohibited_words": ["talk show", "host", "TV", "Queen of Media", "OWN"],
+    "instant_death": ["Ellen DeGeneres", "Dr. Phil"],
+    "category": "personality",
+    "difficulty": 3
+  },
+  {
+    "company": "Snapple",
+    "prohibited_words": ["drink", "juice", "tea", "beverage", "flavored"],
+    "instant_death": ["Arizona", "Nestea"],
+    "category": "food & beverage",
+    "difficulty": 2
+  },
+  {
+    "company": "Family Feud",
+    "prohibited_words": ["game show", "survey", "Steve Harvey", "contestants", "questions"],
+    "instant_death": ["Jeopardy", "Wheel of Fortune"],
+    "category": "entertainment",
+    "difficulty": 2
+  },
+  {
+    "company": "LEGO",
+    "prohibited_words": ["blocks", "toys", "bricks", "build", "construction"],
+    "instant_death": ["Mega Bloks", "K'NEX"],
+    "category": "toys",
+    "difficulty": 1
+  },
+  {
+    "company": "Tiffany & Co.",
+    "prohibited_words": ["jewelry", "diamonds", "blue box", "engagement ring", "luxury"],
+    "instant_death": ["Cartier", "Swarovski"],
+    "category": "retail",
+    "difficulty": 2
+  },
+  {
+    "company": "IKEA",
+    "prohibited_words": ["furniture", "Sweden", "flat-pack", "assembly", "store"],
+    "instant_death": ["Ashley Furniture", "Wayfair"],
+    "category": "retail",
+    "difficulty": 1
+  },
+  {
+    "company": "Pixar",
+    "prohibited_words": ["animation", "Disney", "movies", "toys", "studio"],
+    "instant_death": ["DreamWorks", "Illumination"],
+    "category": "entertainment",
+    "difficulty": 2
+  },
+  {
+    "company": "Dr. Pepper",
+    "prohibited_words": ["soda", "soft drink", "cola", "beverage", "unique flavor"],
+    "instant_death": ["Coca-Cola", "Pepsi"],
+    "category": "food & beverage",
+    "difficulty": 1
+  },
+  {
+    "company": "Crocs",
+    "prohibited_words": ["shoes", "clogs", "foam", "comfort", "plastic"],
+    "instant_death": ["Skechers", "Birkenstock"],
+    "category": "retail",
+    "difficulty": 2
+  },
+  {
+    "company": "Harley-Davidson",
+    "prohibited_words": ["motorcycle", "biker", "engine", "freedom", "American"],
+    "instant_death": ["Indian Motorcycles", "Ducati"],
+    "category": "automotive",
+    "difficulty": 2
+  },
+  {
+    "company": "Chanel",
+    "prohibited_words": ["fashion", "perfume", "luxury", "coco", "designer"],
+    "instant_death": ["Gucci", "Dior"],
+    "category": "retail",
+    "difficulty": 2
+  },
+  {
+    "company": "Mastercard",
+    "prohibited_words": ["credit", "payment", "card", "Visa", "bank"],
+    "instant_death": ["Visa", "American Express"],
+    "category": "finance",
+    "difficulty": 1
+  },
+  {
+    "company": "Popeyes",
+    "prohibited_words": ["fried chicken", "fast food", "Louisiana", "spicy", "restaurant"],
+    "instant_death": ["KFC", "Chick-fil-A"],
+    "category": "food & beverage",
+    "difficulty": 2
+  },
+  {
+    "company": "Siri",
+    "prohibited_words": ["voice assistant", "Apple", "talk", "AI", "commands"],
+    "instant_death": ["Google Assistant", "Alexa"],
+    "category": "technology",
+    "difficulty": 2
+  },
+  {
+    "company": "The Simpsons",
+    "prohibited_words": ["TV show", "cartoon", "Homer", "Springfield", "Matt Groening"],
+    "instant_death": ["Family Guy", "Futurama"],
+    "category": "entertainment",
+    "difficulty": 2
+  }
+]
+
