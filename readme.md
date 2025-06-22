@@ -4,7 +4,7 @@
 
 ## 🔥 What Is Pitchanary?
 
-*Pitchanary* is a competitive team game where players pitch **companies or brands** to their teammates without saying the name, trademarks, or any prohibited words. The goal is to sell the idea *as if it’s new* — focusing on how you would pitch it at launch, not describing its history or past success.
+*Pitchanary* is a competitive team game where players pitch well-known **companies or brands** to their teammates without saying the name, trademarks, or any prohibited words. The goal is to sell the idea *as if it’s new* — focusing on how you would pitch it at launch, not describing its history or past success.
 
 ---
 
@@ -23,7 +23,7 @@
 
 - Describe the company or brand *as if it’s brand new* on the market.
 - Avoid mentioning its past achievements, legacy, or history.
-- Example:
+- Example for "The Simpsons":
   - ❌ “The longest-running animated show.”  
   - ✔️ “A new animated sitcom about a dysfunctional suburban family.”
 
@@ -86,13 +86,15 @@
 
 ---
 
-## 🧩 Sample Card
+## 🧩 Sample
 
+```
 Companies/Brands: ["Tinder", "Hinge", "Bumble"]
 Category: Social Media
 Prohibited Words: swipe, match, date, app, profile
+```
 
-- Round 2: Pitch the **second** company/brand (Hinge).
+- Assume it's Round 2: Pitch the **second** company/brand (Hinge).
 - Guessing Tinder or Bumble causes Instant Death.
 
 ---
