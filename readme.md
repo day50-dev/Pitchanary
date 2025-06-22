@@ -92,7 +92,6 @@ Companies/Brands: ["Tinder", "Hinge", "Bumble"]
 Category: Social Media
 Prohibited Words: swipe, match, date, app, profile
 
-
 - Round 2: Pitch the **second** company/brand (Hinge).
 - Guessing Tinder or Bumble causes Instant Death.
 
@@ -121,4 +120,3 @@ Pitchanary sharpens your skills in pitching, persuasion, and strategic thinking,
 ---
 
 **Shuffle up and pitch carefully!**
-
