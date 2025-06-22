@@ -1,4 +1,4 @@
-# 🎲 Pitchanary: Game Rules (Updated Format)
+# 🎲 Pitchanary: Game Rules 
 
 ---
 
