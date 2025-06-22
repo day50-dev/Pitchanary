@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pitchanary - Card Pitcher</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f7f9fc;
+    color: #222;
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+  h1 {
+    margin-bottom: 0.2rem;
+    font-weight: 700;
+  }
+  .card-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
+    max-width: 400px;
+    width: 100%;
+    padding: 2rem;
+    margin: 2rem 0;
+    text-align: center;
+  }
+  .category {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+  .companies {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    margin-bottom: 1rem;
+  }
+  .prohibited {
+    font-size: 0.95rem;
+    color: #b03030;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+  .timer {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 1rem 0 2rem 0;
+    color: #004d00;
+  }
+  .buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  button {
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  button:disabled {
+    background-color: #a0a0a0;
+    cursor: not-allowed;
+  }
+  button:hover:not(:disabled) {
+    background-color: #005ea3;
+  }
+</style>
+</head>
+<body>
+
+<h1>Pitchanary</h1>
+
+<div class="card-container" aria-live="polite" aria-atomic="true">
+  <div class="category" id="category">Category: Loading...</div>
+  <div class="companies" id="companies">Loading...</div>
+  <div class="prohibited"><strong>Prohibited words:</strong> <span id="prohibited">Loading...</span></div>
+  <div class="timer" id="timer">00:00</div>
+</div>
+
+<div class="buttons">
+  <button id="correctBtn">Correct Guess</button>
+  <button id="nextBtn" disabled>Next Card</button>
+  <button id="startOverBtn">Start Over</button>
+</div>
+
+<script>
+  // Sample deck (replace with your actual card data)
+  const deck = [
+    {
+      companies: ["Coke", "Dr Pepper", "Red Bull"],
+      category: "Food & Beverage",
+      prohibited_words: ["soda", "drink", "cola", "carbonated", "caffeine"]
+    },
+    {
+      companies: ["Tinder", "Hinge", "Bumble"],
+      category: "Social Media",
+      prohibited_words: ["swipe", "match", "date", "app", "profile"]
+    },
+    {
+      companies: ["PlayStation", "Xbox", "Nintendo Switch"],
+      category: "Entertainment",
+      prohibited_words: ["console", "controller", "games", "graphics", "exclusive"]
+    }
+  ];
+
+  let currentIndex = 0;
+  let timerInterval;
+  let timerSeconds = 30;
+
+  const categoryEl = document.getElementById("category");
+  const companiesEl = document.getElementById("companies");
+  const prohibitedEl = document.getElementById("prohibited");
+  const timerEl = document.getElementById("timer");
+
+  const correctBtn = document.getElementById("correctBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const startOverBtn = document.getElementById("startOverBtn");
+
+  function formatTime(seconds) {
+    const m = Math.floor(seconds / 60).toString().padStart(2, "0");
+    const s = (seconds % 60).toString().padStart(2, "0");
+    return `${m}:${s}`;
+  }
+
+  function showCard(index) {
+    if (index >= deck.length) {
+      categoryEl.textContent = "No more cards. Game over!";
+      companiesEl.textContent = "";
+      prohibitedEl.textContent = "";
+      timerEl.textContent = "00:00";
+      correctBtn.disabled = true;
+      nextBtn.disabled = true;
+      return;
+    }
+
+    const card = deck[index];
+    categoryEl.textContent = `Category: ${card.category}`;
+    companiesEl.textContent = card.companies.join(" / ");
+    prohibitedEl.textContent = card.prohibited_words.join(", ");
+    timerEl.textContent = "00:00";
+
+    correctBtn.disabled = false;
+    nextBtn.disabled = true;
+
+    if (timerInterval) {
+      clearInterval(timerInterval);
+    }
+    timerSeconds = 30;
+  }
+
+  function startTimer() {
+    timerEl.textContent = formatTime(timerSeconds);
+    timerInterval = setInterval(() => {
+      timerSeconds--;
+      timerEl.textContent = formatTime(timerSeconds);
+      if (timerSeconds <= 0) {
+        clearInterval(timerInterval);
+        correctBtn.disabled = true;
+        nextBtn.disabled = false;
+      }
+    }, 1000);
+  }
+
+  correctBtn.addEventListener("click", () => {
+    correctBtn.disabled = true;
+    nextBtn.disabled = false;
+    startTimer();
+  });
+
+  nextBtn.addEventListener("click", () => {
+    currentIndex++;
+    showCard(currentIndex);
+  });
+
+  startOverBtn.addEventListener("click", () => {
+    currentIndex = 0;
+    showCard(currentIndex);
+    correctBtn.disabled = false;
+    nextBtn.disabled = true;
+    if (timerInterval) {
+      clearInterval(timerInterval);
+    }
+    timerEl.textContent = "00:00";
+  });
+
+  // Initialize first card
+  showCard(currentIndex);
+</script>
+
+</body>
+</html>
+
