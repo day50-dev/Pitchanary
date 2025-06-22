@@ -23,7 +23,7 @@
 
 - Describe the company or brand *as if it’s brand new* on the market.
 - Avoid mentioning its past achievements, legacy, or history.
-- Example:
+- Example for "The Simpsons":
   - ❌ “The longest-running animated show.”  
   - ✔️ “A new animated sitcom about a dysfunctional suburban family.”
 
