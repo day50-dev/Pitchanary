@@ -1,285 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Pitchanary - Card Pitcher</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@400;700&display=swap');
-
-  body {
-    font-family: 'Roboto', sans-serif;
-    background: #e0e7ff;
-    margin: 0;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-  }
-  h1 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-size: 3rem;
-    margin: 0 0 1rem 0;
-    color: #2c3e50;
-    user-select: none;
-  }
-  #roundTitle {
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: #34495e;
-    margin-bottom: 1.5rem;
-    user-select: none;
-  }
-  .card-container {
-    background: white;
-    border-radius: 20px;
-    width: 360px;
-    height: 480px;
-    padding: 2.5rem 3rem;
-    box-shadow:
-      0 10px 20px rgba(0,0,0,0.12),
-      inset 0 0 10px #f0f0f0,
-      0 0 0 3px #4b6cb7;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    user-select: none;
-  }
-  .category {
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: #7f8c8d;
-    margin-bottom: 1.5rem;
-    letter-spacing: 0.04em;
-  }
-  .companies {
-    font-size: 1.8rem;
-    font-weight: 900;
-    letter-spacing: 0.04em;
-    color: #2c3e50;
-    margin-bottom: 2rem;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 12px;
-  }
-  .companies span {
-    white-space: nowrap;
-  }
-  .prohibited {
-    font-size: 1rem;
-    color: #c0392b;
-    border-top: 1px solid #eee;
-    padding-top: 1rem;
-    line-height: 1.4;
-  }
-  .timer {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #27ae60;
-    text-align: center;
-    margin: 1rem 0 0 0;
-    user-select: none;
-  }
-  .buttons {
-    margin-top: 2rem;
-    display: flex;
-    gap: 1rem;
-  }
-  button {
-    background-color: #2980b9;
-    color: white;
-    border: none;
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
-    font-weight: 700;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    user-select: none;
-  }
-  button:disabled {
-    background-color: #95a5a6;
-    cursor: not-allowed;
-  }
-  button:hover:not(:disabled) {
-    background-color: #1c5980;
-  }
-
-  @media (max-width: 400px) {
-    .card-container {
-      width: 90vw;
-      height: 60vh;
-      padding: 1.5rem 1.8rem;
-    }
-    .companies {
-      font-size: 1.3rem;
-      gap: 8px;
-    }
-    .timer {
-      font-size: 2rem;
-    }
-    button {
-      padding: 0.8rem 1.2rem;
-      font-size: 1rem;
-    }
-  }
-</style>
+    <title>Pitchanary Landing Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+        #content {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-
-<h1>Pitchanary</h1>
-<div id="roundTitle" aria-live="polite" aria-atomic="true">Loading Round...</div>
-
-<div class="card-container" aria-live="polite" aria-atomic="true" role="region" aria-label="Current card">
-  <div class="category" id="category">Category: Loading...</div>
-  <div class="companies" id="companies">Loading...</div>
-  <div class="prohibited"><strong>Prohibited words:</strong> <span id="prohibited">Loading...</span></div>
-  <div class="timer" id="timer">00:00</div>
-</div>
-
-<div class="buttons">
-  <button id="correctBtn">Correct Guess</button>
-  <button id="nextBtn" disabled>Next Card</button>
-  <button id="startOverBtn">Start Over</button>
-</div>
-
-<script>
-  let deck = [];
-  let currentCardIndex = 0;
-  let companyRoundIndex = 0;
-  let timerInterval;
-  let timerSeconds = 30;
-
-  const roundTitleEl = document.getElementById("roundTitle");
-  const categoryEl = document.getElementById("category");
-  const companiesEl = document.getElementById("companies");
-  const prohibitedEl = document.getElementById("prohibited");
-  const timerEl = document.getElementById("timer");
-  const correctBtn = document.getElementById("correctBtn");
-  const nextBtn = document.getElementById("nextBtn");
-  const startOverBtn = document.getElementById("startOverBtn");
-
-  // Fisher-Yates shuffle
-  function shuffleArray(arr) {
-    let a = arr.slice();
-    for(let i = a.length - 1; i > 0; i--){
-      let j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
-    }
-    return a;
-  }
-
-  function formatTime(seconds) {
-    const m = Math.floor(seconds / 60).toString().padStart(2, "0");
-    const s = (seconds % 60).toString().padStart(2, "0");
-    return `${m}:${s}`;
-  }
-
-  function showCard() {
-    if (currentCardIndex >= deck.length) {
-      roundTitleEl.textContent = "Game Over! Thanks for playing.";
-      categoryEl.textContent = "";
-      companiesEl.innerHTML = "";
-      prohibitedEl.textContent = "";
-      timerEl.textContent = "00:00";
-      correctBtn.disabled = true;
-      nextBtn.disabled = true;
-      return;
-    }
-
-    const card = deck[currentCardIndex];
-
-    roundTitleEl.textContent = 
-      `Card ${currentCardIndex + 1} of ${deck.length} — Pitch: ${card.companies[companyRoundIndex]}`;
-    categoryEl.textContent = `Category: ${card.category}`;
-
-    companiesEl.innerHTML = card.companies
-      .map((company, i) => {
-        if (i === companyRoundIndex) {
-          return `<span style="color:green;">✅ ${company}</span>`;
-        } else {
-          return `<span style="color:#c0392b;">💀 ${company}</span>`;
-        }
-      }).join("<br>");
-
-    prohibitedEl.textContent = card.prohibited_words.join(", ");
-
-    timerEl.textContent = "00:00";
-
-    correctBtn.disabled = false;
-    nextBtn.disabled = true;
-
-    if (timerInterval) {
-      clearInterval(timerInterval);
-    }
-    timerSeconds = 30;
-  }
-
-  function startTimer() {
-    timerEl.textContent = formatTime(timerSeconds);
-    timerInterval = setInterval(() => {
-      timerSeconds--;
-      timerEl.textContent = formatTime(timerSeconds);
-      if (timerSeconds <= 0) {
-        clearInterval(timerInterval);
-        correctBtn.disabled = true;
-        nextBtn.disabled = false;
-      }
-    }, 1000);
-  }
-
-  correctBtn.addEventListener("click", () => {
-    correctBtn.disabled = true;
-    nextBtn.disabled = false;
-    startTimer();
-  });
-
-  nextBtn.addEventListener("click", () => {
-    // advance company in current card
-    companyRoundIndex++;
-
-    // if past last company, move to next card and reset company index
-    if (companyRoundIndex > 2) {
-      companyRoundIndex = 0;
-      currentCardIndex++;
-    }
-
-    showCard();
-  });
-
-  startOverBtn.addEventListener("click", () => {
-    currentCardIndex = 0;
-    companyRoundIndex = 0;
-    deck = shuffleArray(deck);
-    showCard();
-    correctBtn.disabled = false;
-    nextBtn.disabled = true;
-    if (timerInterval) {
-      clearInterval(timerInterval);
-    }
-    timerEl.textContent = "00:00";
-  });
-
-  // Load deck and initialize
-  fetch('cards.json')
-    .then(response => {
-      if (!response.ok) throw new Error("Failed to load cards.json");
-      return response.json();
-    })
-    .then(data => {
-      deck = shuffleArray(data);
-      showCard();
-    })
-    .catch(err => {
-      roundTitleEl.textContent = "Error loading cards. Please check cards.json.";
-      console.error(err);
-    });
-</script>
-
+    <h1>Pitchanary</h1>
+    <a href="index.html">Play Pitchanary</a>
+    <div id="content"></div>
+    <script>
+        fetch('readme.md')
+            .then(response => response.text())
+            .then(markdown => {
+                document.getElementById('content').innerHTML = marked.parse(markdown);
+            });
+    </script>
 </body>
 </html>
-
