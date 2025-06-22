@@ -5,10 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Pitchanary - Card Pitcher</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@400;700&display=swap');
+
   body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f7f9fc;
-    color: #222;
+    font-family: 'Roboto', sans-serif;
+    background: #e0e7ff;
     margin: 0;
     padding: 2rem;
     display: flex;
@@ -17,73 +18,123 @@
     min-height: 100vh;
   }
   h1 {
-    margin-bottom: 0.2rem;
+    font-family: 'Playfair Display', serif;
     font-weight: 700;
+    font-size: 3rem;
+    margin: 0 0 1rem 0;
+    color: #2c3e50;
+    user-select: none;
+  }
+  #roundTitle {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #34495e;
+    margin-bottom: 1.5rem;
+    user-select: none;
   }
   .card-container {
     background: white;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
-    max-width: 400px;
-    width: 100%;
-    padding: 2rem;
-    margin: 2rem 0;
-    text-align: center;
+    border-radius: 20px;
+    width: 360px;
+    height: 480px;
+    padding: 2.5rem 3rem;
+    box-shadow:
+      0 10px 20px rgba(0,0,0,0.12),
+      inset 0 0 10px #f0f0f0,
+      0 0 0 3px #4b6cb7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    user-select: none;
   }
   .category {
     font-weight: 600;
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.04em;
   }
   .companies {
-    font-size: 1.4rem;
-    font-weight: 700;
-    letter-spacing: 0.03em;
-    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+  }
+  .companies span {
+    white-space: nowrap;
   }
   .prohibited {
-    font-size: 0.95rem;
-    color: #b03030;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
+    font-size: 1rem;
+    color: #c0392b;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+    line-height: 1.4;
   }
   .timer {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    margin: 1rem 0 2rem 0;
-    color: #004d00;
+    color: #27ae60;
+    text-align: center;
+    margin: 1rem 0 0 0;
+    user-select: none;
   }
   .buttons {
+    margin-top: 2rem;
     display: flex;
     gap: 1rem;
-    justify-content: center;
   }
   button {
-    background-color: #0078d4;
+    background-color: #2980b9;
     color: white;
     border: none;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 8px;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 12px;
     cursor: pointer;
     transition: background-color 0.2s ease;
+    user-select: none;
   }
   button:disabled {
-    background-color: #a0a0a0;
+    background-color: #95a5a6;
     cursor: not-allowed;
   }
   button:hover:not(:disabled) {
-    background-color: #005ea3;
+    background-color: #1c5980;
+  }
+
+  @media (max-width: 400px) {
+    .card-container {
+      width: 90vw;
+      height: 60vh;
+      padding: 1.5rem 1.8rem;
+    }
+    .companies {
+      font-size: 1.3rem;
+      gap: 8px;
+    }
+    .timer {
+      font-size: 2rem;
+    }
+    button {
+      padding: 0.8rem 1.2rem;
+      font-size: 1rem;
+    }
   }
 </style>
 </head>
 <body>
 
 <h1>Pitchanary</h1>
+<div id="roundTitle" aria-live="polite" aria-atomic="true">Loading Round...</div>
 
-<div class="card-container" aria-live="polite" aria-atomic="true">
+<div class="card-container" aria-live="polite" aria-atomic="true" role="region" aria-label="Current card">
   <div class="category" id="category">Category: Loading...</div>
   <div class="companies" id="companies">Loading...</div>
   <div class="prohibited"><strong>Prohibited words:</strong> <span id="prohibited">Loading...</span></div>
@@ -97,37 +148,30 @@
 </div>
 
 <script>
-  // Sample deck (replace with your actual card data)
-  const deck = [
-    {
-      companies: ["Coke", "Dr Pepper", "Red Bull"],
-      category: "Food & Beverage",
-      prohibited_words: ["soda", "drink", "cola", "carbonated", "caffeine"]
-    },
-    {
-      companies: ["Tinder", "Hinge", "Bumble"],
-      category: "Social Media",
-      prohibited_words: ["swipe", "match", "date", "app", "profile"]
-    },
-    {
-      companies: ["PlayStation", "Xbox", "Nintendo Switch"],
-      category: "Entertainment",
-      prohibited_words: ["console", "controller", "games", "graphics", "exclusive"]
-    }
-  ];
-
-  let currentIndex = 0;
+  let deck = [];
+  let currentCardIndex = 0;
+  let companyRoundIndex = 0;
   let timerInterval;
   let timerSeconds = 30;
 
+  const roundTitleEl = document.getElementById("roundTitle");
   const categoryEl = document.getElementById("category");
   const companiesEl = document.getElementById("companies");
   const prohibitedEl = document.getElementById("prohibited");
   const timerEl = document.getElementById("timer");
-
   const correctBtn = document.getElementById("correctBtn");
   const nextBtn = document.getElementById("nextBtn");
   const startOverBtn = document.getElementById("startOverBtn");
+
+  // Fisher-Yates shuffle
+  function shuffleArray(arr) {
+    let a = arr.slice();
+    for(let i = a.length - 1; i > 0; i--){
+      let j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
 
   function formatTime(seconds) {
     const m = Math.floor(seconds / 60).toString().padStart(2, "0");
@@ -135,10 +179,11 @@
     return `${m}:${s}`;
   }
 
-  function showCard(index) {
-    if (index >= deck.length) {
-      categoryEl.textContent = "No more cards. Game over!";
-      companiesEl.textContent = "";
+  function showCard() {
+    if (currentCardIndex >= deck.length) {
+      roundTitleEl.textContent = "Game Over! Thanks for playing.";
+      categoryEl.textContent = "";
+      companiesEl.innerHTML = "";
       prohibitedEl.textContent = "";
       timerEl.textContent = "00:00";
       correctBtn.disabled = true;
@@ -146,10 +191,23 @@
       return;
     }
 
-    const card = deck[index];
+    const card = deck[currentCardIndex];
+
+    roundTitleEl.textContent = 
+      `Card ${currentCardIndex + 1} of ${deck.length} — Pitch: ${card.companies[companyRoundIndex]}`;
     categoryEl.textContent = `Category: ${card.category}`;
-    companiesEl.textContent = card.companies.join(" / ");
+
+    companiesEl.innerHTML = card.companies
+      .map((company, i) => {
+        if (i === companyRoundIndex) {
+          return `<span style="color:green;">✅ ${company}</span>`;
+        } else {
+          return `<span style="color:#c0392b;">💀 ${company}</span>`;
+        }
+      }).join("<br>");
+
     prohibitedEl.textContent = card.prohibited_words.join(", ");
+
     timerEl.textContent = "00:00";
 
     correctBtn.disabled = false;
@@ -181,13 +239,23 @@
   });
 
   nextBtn.addEventListener("click", () => {
-    currentIndex++;
-    showCard(currentIndex);
+    // advance company in current card
+    companyRoundIndex++;
+
+    // if past last company, move to next card and reset company index
+    if (companyRoundIndex > 2) {
+      companyRoundIndex = 0;
+      currentCardIndex++;
+    }
+
+    showCard();
   });
 
   startOverBtn.addEventListener("click", () => {
-    currentIndex = 0;
-    showCard(currentIndex);
+    currentCardIndex = 0;
+    companyRoundIndex = 0;
+    deck = shuffleArray(deck);
+    showCard();
     correctBtn.disabled = false;
     nextBtn.disabled = true;
     if (timerInterval) {
@@ -196,8 +264,20 @@
     timerEl.textContent = "00:00";
   });
 
-  // Initialize first card
-  showCard(currentIndex);
+  // Load deck and initialize
+  fetch('cards.json')
+    .then(response => {
+      if (!response.ok) throw new Error("Failed to load cards.json");
+      return response.json();
+    })
+    .then(data => {
+      deck = shuffleArray(data);
+      showCard();
+    })
+    .catch(err => {
+      roundTitleEl.textContent = "Error loading cards. Please check cards.json.";
+      console.error(err);
+    });
 </script>
 
 </body>
