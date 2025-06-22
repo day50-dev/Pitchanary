@@ -1,124 +1,124 @@
-# 🎲 Pitchanary: Full Game Instructions
+# 🎲 Pitchanary: Game Rules (Updated Format)
 
 ---
 
-## 1. Quick Start Overview
+## 🔥 What Is Pitchanary?
 
-- Two teams compete to guess their assigned companies first.
-- On your turn, one player **pitches** a company without saying its name or banned words.
-- Teammates try to guess the company as fast as possible.
-- The first team to guess all 10 companies **wins**!
-- **Instant Death Mode** (mandatory): Guessing a risky competitor ends the game immediately.
-- **Pitch Like It’s New** (mandatory): Pitch companies as if launching today, not by describing what they became.
+*Pitchanary* is a competitive team game where players pitch **companies or brands** to their teammates without saying the name, trademarks, or any prohibited words. The goal is to sell the idea *as if it’s new* — focusing on how you would pitch it at launch, not describing its history or past success.
 
 ---
 
-## 2. Objective
+## 🎯 Objective
 
-Be the first team to correctly guess all companies in your deck by listening to your teammate’s pitch — but don’t say forbidden words or trademarks!
-
-Train your pitching skills by focusing on *how you’d sell* a company *prospectively* rather than *what you know* about it historically.
-
----
-
-## 3. Setup
-
-- Players divide into **2 teams** (4+ players recommended).
-- Shuffle the deck of Pitchanary cards.
-- Deal **10 cards** to each team (keep them hidden).
-- Choose which team pitches first.
+- Pitch your assigned company or brand in a way that helps your teammates guess it quickly.
+- Do **not** say the company or brand name, trademarks, or any prohibited words.
+- Avoid **historical or retrospective descriptions** — pitch like it is launching today.
+- Watch out for **Instant Death guesses** — guessing a related but incorrect company or brand causes immediate loss for that round.
 
 ---
 
-## 4. Components
+## 🧠 Key Concepts
 
-Each card contains:
+### 1. **Pitch Like It’s New**
 
-- **Company Name** (hidden from guessers).
-- **Prohibited Words**: Common words or phrases you cannot say while pitching.
-- **Instant Death Companies**: Close competitors or lookalikes that cause immediate loss if guessed.
-- **Difficulty Level**: Ranges from 1 (easy) to 3 (hard) based on company size and market crowdedness.
+- Describe the company or brand *as if it’s brand new* on the market.
+- Avoid mentioning its past achievements, legacy, or history.
+- Example:
+  - ❌ “The longest-running animated show.”  
+  - ✔️ “A new animated sitcom about a dysfunctional suburban family.”
 
----
+### 2. **Prohibited Words and Trademarks**
 
-## 5. Core Rules
+- Company or brand names and trademarks are **never allowed**.
+- Each card lists **prohibited words** that cannot be used in your pitch.
+- Saying any prohibited word results in losing that round.
 
-### 5.1 Pitch Like It’s New (Mandatory)
+### 3. **Instant Death Guesses**
 
-- Pitch the company, brand, or product **as if it is brand new, launching today**.
-- Do **not** rely on historical achievements, reputation, or legacy.
-- Focus on **how you would sell it to someone unfamiliar** at the moment of introduction.
-- Examples:  
-  - ❌ “The Simpsons is the longest-running animated show.”  
-  - ✔️ “A regressive family sitcom mixing ‘The Cosby Show’ with ‘Married with Children.’”  
-  - ❌ “Netflix is the biggest streaming platform.”  
-  - ✔️ “A service offering unlimited movies and shows instantly on your TV.”
-
-### 5.2 Prohibited Words & Instant Death (Mandatory)
-
-- You **cannot say** the company name or any of the **prohibited words** listed on the card.
-- You **cannot give indirect clues** such as letter hints, rhymes, or spelling.
-- If your team guesses an **Instant Death company** listed on the card, **your team immediately loses and the other team wins**.
-- If a Pitcher accidentally uses a prohibited word, apply a penalty (e.g., discard the card, lose time).
-- This ensures pitches are **challenging, precise, and focused on unique differentiation**.
+- Each card includes **3 related companies or brands**.
+- Only one is the correct answer for the current round.
+- Guessing one of the other two immediately ends the round with zero points.
 
 ---
 
-## 6. How to Play
+## 🕹️ How to Play
 
-1. On your team’s turn, select a **Pitcher**.
-2. The Pitcher draws the top card and reviews it privately.
-3. The Pitcher delivers a **prospective pitch** without saying the company name or prohibited words.
-4. Teammates shout out guesses freely.
-5. When the correct company is guessed:
-   - Remove the card from the deck.
-   - The Pitcher draws the next card.
-6. The turn continues until the team guesses all their cards or time runs out (optional timer).
-7. Pass the turn to the other team.
-8. Repeat until one team finishes all 10 cards or the other team triggers an Instant Death loss.
+### Setup
+
+- Divide into two teams.
+- Shuffle the Pitchanary deck.
+- The game lasts **9 rounds**.
+
+### Each Round
+
+1. Draw **1 card** containing 3 companies or brands (e.g., `["Coke", "Dr Pepper", "Red Bull"]`).
+2. Determine the company or brand to pitch based on the round number:
+   - Rounds 1, 4, 7 → pitch the **first** company/brand.
+   - Rounds 2, 5, 8 → pitch the **second** company/brand.
+   - Rounds 3, 6, 9 → pitch the **third** company/brand.
+3. The pitcher reads the card and delivers a pitch **without using the prohibited words or trademarks**.
+4. Teammates guess aloud:
+   - Correct guess: 1 point.
+   - Guessing one of the other two companies or brands on the card: **Instant Death**, round ends with zero points.
+5. Continue until all 9 rounds are completed.
+
+### Scoring
+
+- 1 point for each correctly guessed company or brand.
+- 0 points if prohibited words are used or an Instant Death guess occurs.
+- Maximum score is 9 points.
 
 ---
 
-## 7. Strategy Tips
+## 🧠 Strategy Tips
 
 ### For Pitchers
 
-- Focus on **unique selling points** or market niches.
-- Use **creative analogies, scenarios, or benefits**.
-- Avoid generic phrases or jargon that fit multiple companies.
-- Pitch like a marketer or salesperson selling a *new* product.
-- Keep your pitch clear, concise, and compelling.
+- Focus on what differentiates the company or brand from the others on the card.
+- Be creative, prospective, and concise.
+- Avoid using any jargon, generic terms, or prohibited words.
 
 ### For Guessers
 
-- Think carefully before guessing.
-- Avoid jumping to obvious but risky Instant Death companies.
-- Ask teammates to clarify or elaborate if unsure.
-- Use teamwork and process of elimination.
+- Think carefully and avoid risky guesses.
+- Ask teammates for clarifications to narrow down possibilities.
+- Remember which companies or brands are “Instant Death” traps this round.
 
 ---
 
-## 8. Winning the Game
+## 🧩 Sample Card
 
-- The first team to correctly guess all 10 companies wins.
-- In timed games, the fastest team to complete their deck wins.
-- If an Instant Death company is guessed by mistake, the opposing team wins immediately.
+Companies/Brands: ["Tinder", "Hinge", "Bumble"]
+Category: Social Media
+Prohibited Words: swipe, match, date, app, profile
 
----
 
-## 9. Variations & Optional Rules
-
-- **Timed Rounds:** Use a timer to increase urgency.
-- **Hard Mode:** Increase the number of prohibited words or Instant Death companies.
-- **Wildcard Cards:** Include special cards such as Silent Pitch (act it out), Bad Pitch (pitch negatively), or Reverse Pitch (guessers pitch).
-- **Solo Practice:** Pitch to an AI guesser (if implemented).
+- Round 2: Pitch the **second** company/brand (Hinge).
+- Guessing Tinder or Bumble causes Instant Death.
 
 ---
 
-## 10. About Pitchanary
+## 🏁 Ending the Game
 
-*Pitchanary* is designed to sharpen your ability to pitch ideas quickly and effectively, focusing on creative, prospective communication. It’s perfect for parties, team-building, entrepreneurs, and anyone wanting to improve their pitching skills.
+- After 9 rounds, add up the points.
+- The team with the highest score wins.
+- For ties, play a sudden death round with a special tiebreaker card.
 
 ---
 
-**Ready to pitch? Let’s play!**
+## 🛠️ Variations
+
+- **Silent Mode**: Act out pitches without speaking.
+- **Reverse Pitch**: Guessers describe clues; pitcher guesses.
+- **Timed Mode**: Impose a time limit per pitch.
+
+---
+
+## 🎉 Why Play?
+
+Pitchanary sharpens your skills in pitching, persuasion, and strategic thinking, making it perfect for entrepreneurs, marketers, or any fun group.
+
+---
+
+**Shuffle up and pitch carefully!**
+
