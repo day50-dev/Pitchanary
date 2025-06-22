@@ -5,11 +5,11 @@
 ## 1. Quick Start Overview
 
 - Two teams compete to guess their assigned companies first.
-- On your turn, one player **pitches** a company without saying its name or banned words.
+- On your turn, one player **pitches** a company without saying its name, trademarks, banned words or used the past tense.
 - Teammates try to guess the company as fast as possible.
 - The first team to guess all 10 companies **wins**!
-- **Instant Death Mode** (mandatory): Guessing a risky competitor ends the game immediately.
-- **Pitch Like It’s New** (mandatory): Pitch companies as if launching today, not by describing what they became.
+- **Instant Death Mode**: Guessing a risky competitor loses the game immediately.
+- **Pitch Like It’s New**: Pitch companies as if launching today, not by describing what they became.
 
 ---
 
