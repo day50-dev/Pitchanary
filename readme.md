@@ -4,7 +4,7 @@
 
 ## 🔥 What Is Pitchanary?
 
-*Pitchanary* is a competitive team game where players pitch **companies or brands** to their teammates without saying the name, trademarks, or any prohibited words. The goal is to sell the idea *as if it’s new* — focusing on how you would pitch it at launch, not describing its history or past success.
+*Pitchanary* is a competitive team game where players pitch well-known **companies or brands** to their teammates without saying the name, trademarks, or any prohibited words. The goal is to sell the idea *as if it’s new* — focusing on how you would pitch it at launch, not describing its history or past success.
 
 ---
 
