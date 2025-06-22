@@ -30,17 +30,17 @@
     "prohibited_words": ["shoes", "sportswear", "athletic", "gear", "brand"]
   },
   {
-    "companies": ["Airbnb", "Vrbo", "Booking.com"],
+    "companies": ["Airbnb", "Couchsurfing.com", "Booking.com"],
     "category": "Travel",
     "prohibited_words": ["rental", "stay", "home", "booking", "vacation"]
   },
   {
-    "companies": ["Spotify", "Apple Music", "Tidal"],
+    "companies": ["Spotify", "Apple Music", "Bandcamp"],
     "category": "Entertainment",
     "prohibited_words": ["music", "streaming", "playlist", "audio", "songs"]
   },
   {
-    "companies": ["Subway", "Quiznos", "Jersey Mike's"],
+    "companies": ["Subway", "Quiznos", "Panera"],
     "category": "Food & Beverage",
     "prohibited_words": ["sandwich", "sub", "bread", "deli", "fast food"]
   },
@@ -58,11 +58,6 @@
     "companies": ["Target", "Walmart", "Costco"],
     "category": "Retail",
     "prohibited_words": ["store", "discount", "shopping", "big box", "membership"]
-  },
-  {
-    "companies": ["Crocs", "Birkenstock", "UGG"],
-    "category": "Fashion",
-    "prohibited_words": ["shoes", "comfortable", "slip-on", "footwear", "brand"]
   },
   {
     "companies": ["LinkedIn", "Indeed", "Glassdoor"],
@@ -85,7 +80,7 @@
     "prohibited_words": ["glasses", "frames", "prescription", "online", "vision"]
   },
   {
-    "companies": ["Uber", "Lyft", "Via"],
+    "companies": ["Uber", "Lyft", "Bird"],
     "category": "Transportation",
     "prohibited_words": ["ride-share", "gig economy", "driver", "app", "taxi"]
   },
@@ -155,7 +150,7 @@
     "prohibited_words": ["electric", "car", "vehicle", "battery", "range"]
   },
   {
-    "companies": ["Patreon", "Ko-fi", "SubscribeStar"],
+    "companies": ["Patreon", "Ko-fi", "GoFundMe"],
     "category": "Creator Platforms",
     "prohibited_words": ["support", "fans", "subscription", "creator", "donate"]
   }
