@@ -1,23 +1,16 @@
-# 🎲 Pitchanary: Game Rules 
+# Pitchanary
 
----
+**Pitchanary** is a competitive team game where players pitch well-known **companies or brands** to their teammates without saying the name, trademarks, or any prohibited words. The goal is to sell the idea *as if it’s new* focusing on how you would pitch it at launch, not describing its history or past success.
 
-## 🔥 What Is Pitchanary?
-
-*Pitchanary* is a competitive team game where players pitch well-known **companies or brands** to their teammates without saying the name, trademarks, or any prohibited words. The goal is to sell the idea *as if it’s new* — focusing on how you would pitch it at launch, not describing its history or past success.
-
----
-
-## 🎯 Objective
+## Objective
 
 - Pitch your assigned company or brand in a way that helps your teammates guess it quickly.
 - Do **not** say the company or brand name, trademarks, or any prohibited words.
 - Avoid **historical or retrospective descriptions** — pitch like it is launching today.
 - Watch out for **Instant Death guesses** — guessing a related but incorrect company or brand causes immediate loss for that round.
 
----
 
-## 🧠 Key Concepts
+## Key Concepts
 
 ### 1. **Pitch Like It’s New**
 
@@ -39,9 +32,8 @@
 - Only one is the correct answer for the current round.
 - Guessing one of the other two immediately ends the round with zero points.
 
----
 
-## 🕹️ How to Play
+##  How to Play
 
 ### Setup
 
@@ -68,9 +60,7 @@
 - 0 points if prohibited words are used or an Instant Death guess occurs.
 - Maximum score is 9 points.
 
----
-
-## 🧠 Strategy Tips
+## Strategy Tips
 
 ### For Pitchers
 
@@ -84,41 +74,35 @@
 - Ask teammates for clarifications to narrow down possibilities.
 - Remember which companies or brands are “Instant Death” traps this round.
 
----
 
-## 🧩 Sample
+## Example
 
-```
-Companies/Brands: ["Tinder", "Hinge", "Bumble"]
-Category: Social Media
-Prohibited Words: swipe, match, date, app, profile
-```
+Presume our card is as follows:
+- Companies/Brands: "Tinder", "Hinge", "Bumble"
+- Prohibited Words: swipe, match, date, app, profile
 
+Given that:
 - Assume it's Round 2: Pitch the **second** company/brand (Hinge).
 - Guessing Tinder or Bumble causes Instant Death.
 
----
 
-## 🏁 Ending the Game
+## Ending the Game
 
 - After 9 rounds, add up the points.
 - The team with the highest score wins.
 - For ties, play a sudden death round with a special tiebreaker card.
 
----
 
-## 🛠️ Variations
+## Variations
 
 - **Silent Mode**: Act out pitches without speaking.
 - **Reverse Pitch**: Guessers describe clues; pitcher guesses.
 - **Timed Mode**: Impose a time limit per pitch.
 
----
 
-## 🎉 Why Play?
+## Why Play?
 
 Pitchanary sharpens your skills in pitching, persuasion, and strategic thinking, making it perfect for entrepreneurs, marketers, or any fun group.
 
----
 
 **Shuffle up and pitch carefully!**
