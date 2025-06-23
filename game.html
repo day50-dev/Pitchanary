@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Pitchanary - Card Pitcher</title>
+<link rel="stylesheet" href="styles.css">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@400;700&display=swap');
 
@@ -66,16 +67,6 @@
     justify-content: center;
     gap: 12px;
   }
-  .companies span {
-    white-space: nowrap;
-  }
-  .prohibited {
-    font-size: 1rem;
-    color: #c0392b;
-    border-top: 1px solid #eee;
-    padding-top: 1rem;
-    line-height: 1.4;
-  }
   .timer {
     font-size: 2.5rem;
     font-weight: 700;
@@ -132,19 +123,17 @@
 <body>
 
 <h1>Pitchanary</h1>
-<div id="roundTitle" aria-live="polite" aria-atomic="true">Loading Round...</div>
 
 <div class="card-container" aria-live="polite" aria-atomic="true" role="region" aria-label="Current card">
-  <div class="category" id="category">Category: Loading...</div>
   <div class="companies" id="companies">Loading...</div>
-  <div class="prohibited"><strong>Prohibited words:</strong> <span id="prohibited">Loading...</span></div>
+  <div class="prohibited"><strong>Prohibited:</strong> <span id="prohibited">Loading...</span></div>
   <div class="timer" id="timer">00:00</div>
 </div>
 
 <div class="buttons">
-  <button id="correctBtn">Correct Guess</button>
-  <button id="nextBtn" disabled>Next Card</button>
-  <button id="startOverBtn">Start Over</button>
+  <button id="deathBtn">Death</button>
+  <button id="nextBtn" disabled>Next</button>
+  <button id="correctBtn">Correct</button>
 </div>
 
 <script>
@@ -152,7 +141,9 @@
   let currentCardIndex = 0;
   let companyRoundIndex = 0;
   let timerInterval;
-  let timerSeconds = 30;
+  let timerAgg = 0;
+  let timer = 0;
+  let startTime = new Date();
 
   const roundTitleEl = document.getElementById("roundTitle");
   const categoryEl = document.getElementById("category");
@@ -161,7 +152,15 @@
   const timerEl = document.getElementById("timer");
   const correctBtn = document.getElementById("correctBtn");
   const nextBtn = document.getElementById("nextBtn");
-  const startOverBtn = document.getElementById("startOverBtn");
+
+	function formatTime(totalMS) {
+		const minutes = Math.floor(totalMS / 60000);
+		const remainingMS = totalMS % 60000;
+		const seconds = Math.floor(remainingMS / 1000);
+		const milliseconds = Math.floor(remainingMS % 1000/10);
+
+		return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}.${String(milliseconds).padStart(2, '0')}`;
+	}
 
   // Fisher-Yates shuffle
   function shuffleArray(arr) {
@@ -173,19 +172,12 @@
     return a;
   }
 
-  function formatTime(seconds) {
-    const m = Math.floor(seconds / 60).toString().padStart(2, "0");
-    const s = (seconds % 60).toString().padStart(2, "0");
-    return `${m}:${s}`;
-  }
-
   function showCard() {
     if (currentCardIndex >= deck.length) {
       roundTitleEl.textContent = "Game Over! Thanks for playing.";
       categoryEl.textContent = "";
       companiesEl.innerHTML = "";
       prohibitedEl.textContent = "";
-      timerEl.textContent = "00:00";
       correctBtn.disabled = true;
       nextBtn.disabled = true;
       return;
@@ -193,9 +185,6 @@
 
     const card = deck[currentCardIndex];
 
-    roundTitleEl.textContent = 
-      `Card ${currentCardIndex + 1} of ${deck.length} — Pitch: ${card.companies[companyRoundIndex]}`;
-    categoryEl.textContent = `Category: ${card.category}`;
 
     companiesEl.innerHTML = card.companies
       .map((company, i) => {
@@ -208,7 +197,6 @@
 
     prohibitedEl.textContent = card.prohibited_words.join(", ");
 
-    timerEl.textContent = "00:00";
 
     correctBtn.disabled = false;
     nextBtn.disabled = true;
@@ -216,53 +204,44 @@
     if (timerInterval) {
       clearInterval(timerInterval);
     }
-    timerSeconds = 30;
+  }
+
+  function stopTimer() {
+    timerAgg += (new Date() - startTime);
+    startTime = -1;
   }
 
   function startTimer() {
-    timerEl.textContent = formatTime(timerSeconds);
-    timerInterval = setInterval(() => {
-      timerSeconds--;
-      timerEl.textContent = formatTime(timerSeconds);
-      if (timerSeconds <= 0) {
-        clearInterval(timerInterval);
-        correctBtn.disabled = true;
-        nextBtn.disabled = false;
-      }
-    }, 1000);
+    startTime = new Date();
   }
 
   correctBtn.addEventListener("click", () => {
     correctBtn.disabled = true;
     nextBtn.disabled = false;
-    startTimer();
+    stopTimer();
   });
 
   nextBtn.addEventListener("click", () => {
     // advance company in current card
     companyRoundIndex++;
+    currentCardIndex++;
 
     // if past last company, move to next card and reset company index
     if (companyRoundIndex > 2) {
       companyRoundIndex = 0;
-      currentCardIndex++;
     }
 
     showCard();
+    startTimer();
   });
 
-  startOverBtn.addEventListener("click", () => {
-    currentCardIndex = 0;
-    companyRoundIndex = 0;
-    deck = shuffleArray(deck);
-    showCard();
-    correctBtn.disabled = false;
-    nextBtn.disabled = true;
-    if (timerInterval) {
-      clearInterval(timerInterval);
+  setInterval(() => {
+    let showTime = timerAgg;
+    if(startTime > 0) {
+      showTime += (new Date()) - startTime;
     }
-    timerEl.textContent = "00:00";
-  });
+    timerEl.textContent = formatTime(showTime);
+  }, 50);
 
   // Load deck and initialize
   fetch('cards.json')

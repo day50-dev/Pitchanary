@@ -70,16 +70,6 @@
     "prohibited_words": ["photo", "video", "story", "filter", "app"]
   },
   {
-    "companies": ["Zappos", "Nordstrom", "ASOS"],
-    "category": "Retail",
-    "prohibited_words": ["shoes", "clothes", "fashion", "online", "store"]
-  },
-  {
-    "companies": ["Zenni Optical", "Warby Parker", "GlassesUSA"],
-    "category": "Consumer Goods",
-    "prohibited_words": ["glasses", "frames", "prescription", "online", "vision"]
-  },
-  {
     "companies": ["Uber", "Lyft", "Bird"],
     "category": "Transportation",
     "prohibited_words": ["ride-share", "gig economy", "driver", "app", "taxi"]
