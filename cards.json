@@ -101,7 +101,7 @@
   },
   {
     "companies": ["Snapple", "Arizona Tea", "Honest Tea"],
-    "prohibited_words": ["iced tea", "drink", "bottle", "sweet", "beverage"]
+    "prohibited_words": ["tea", "drink", "bottle", "sweet", "beverage"]
   },
   {
     "companies": ["Oprah Winfrey Network", "HBO", "Netflix"],
