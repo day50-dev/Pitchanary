@@ -1,147 +1,166 @@
 [
   {
     "companies": ["Coke", "Dr Pepper", "Red Bull"],
-    "category": "Food & Beverage",
     "prohibited_words": ["soda", "drink", "cola", "carbonated", "caffeine"]
+  },
+  {  
+    "companies": ["Reddit", "4chan", "Discord"],
+    "prohibited_words": ["forum", "chat", "message", "post", "thread"]
   },
   {
     "companies": ["Tinder", "Hinge", "Bumble"],
-    "category": "Social Media",
     "prohibited_words": ["swipe", "match", "date", "app", "profile"]
   },
   {
     "companies": ["PlayStation", "Xbox", "Nintendo Switch"],
-    "category": "Entertainment",
     "prohibited_words": ["console", "controller", "games", "graphics", "exclusive"]
   },
   {
     "companies": ["Dove", "Olay", "Aveeno"],
-    "category": "Consumer Goods",
     "prohibited_words": ["skin", "moisture", "soap", "care", "clean"]
   },
   {
     "companies": ["FedEx", "UPS", "DHL"],
-    "category": "Logistics",
     "prohibited_words": ["package", "shipping", "courier", "delivery", "express"]
   },
   {
     "companies": ["Nike", "Adidas", "Puma"],
-    "category": "Retail",
     "prohibited_words": ["shoes", "sportswear", "athletic", "gear", "brand"]
   },
   {
     "companies": ["Airbnb", "Couchsurfing.com", "Booking.com"],
-    "category": "Travel",
     "prohibited_words": ["rental", "stay", "home", "booking", "vacation"]
   },
   {
     "companies": ["Spotify", "Apple Music", "Bandcamp"],
-    "category": "Entertainment",
     "prohibited_words": ["music", "streaming", "playlist", "audio", "songs"]
   },
   {
+    "companies": ["Dell", "HP", "Lenovo"],
+    "prohibited_words": ["computer", "laptop", "notebook", "PC", "brand"]
+  },
+  {
     "companies": ["Subway", "Quiznos", "Panera"],
-    "category": "Food & Beverage",
     "prohibited_words": ["sandwich", "sub", "bread", "deli", "fast food"]
   },
   {
     "companies": ["Toyota", "Honda", "Hyundai"],
-    "category": "Automotive",
     "prohibited_words": ["car", "sedan", "vehicle", "engine", "brand"]
   },
   {
+    "companies": ["Bitcoin", "Ethereum", "USDC"],
+    "prohibited_words": ["crypto", "currency", "blockchain", "wallet", "stable", "volatile"]
+  },
+  {
     "companies": ["Venmo", "Cash App", "Zelle"],
-    "category": "Finance",
     "prohibited_words": ["money", "send", "transfer", "payment", "mobile"]
   },
   {
+    "companies": ["Baseball Cards", "Jerseys", "Sneakers"],
+    "prohibited_words": ["collect", "sports", "limited", "edition", "value"]
+  },
+  {
+    "companies": ["The Simpsons", "Family Guy", "King of the Hill"],
+     "prohibited_words": ["cartoon", "animated", "family", "sitcom", "episode"]
+  },
+  {
+    "companies": ["M&M's", "Oreos", "Reese's"],
+    "prohibited_words": ["chocolate", "peanut", "cookie", "candy", "sweet"]
+  },
+  {
+    "companies": ["Cheerios", "Rice Krispies", "Kix"],
+    "prohibited_words": ["cereal", "breakfast", "milk", "flakes", "box"]
+  },
+  {
     "companies": ["Target", "Walmart", "Costco"],
-    "category": "Retail",
     "prohibited_words": ["store", "discount", "shopping", "big box", "membership"]
   },
   {
     "companies": ["LinkedIn", "Indeed", "Glassdoor"],
-    "category": "Professional Services",
     "prohibited_words": ["job", "resume", "career", "work", "applicant"]
   },
   {
     "companies": ["Snapchat", "Instagram", "TikTok"],
-    "category": "Social Media",
     "prohibited_words": ["photo", "video", "story", "filter", "app"]
   },
   {
     "companies": ["Uber", "Lyft", "Bird"],
-    "category": "Transportation",
     "prohibited_words": ["ride-share", "gig economy", "driver", "app", "taxi"]
   },
   {
     "companies": ["Charles Schwab", "Fidelity", "E*Trade"],
-    "category": "Finance",
     "prohibited_words": ["brokerage", "invest", "stocks", "account", "trading"]
   },
   {
+    "companies": ["NPR", "Fox News", "TMZ"],
+    "prohibited_words": ["news", "journalism", "headline", "story", "report"]
+  },
+  {
     "companies": ["Tumblr", "Medium", "WordPress"],
-    "category": "Publishing",
     "prohibited_words": ["blog", "post", "write", "publish", "platform"]
   },
   {
     "companies": ["Snapple", "Arizona Tea", "Honest Tea"],
-    "category": "Food & Beverage",
     "prohibited_words": ["iced tea", "drink", "bottle", "sweet", "beverage"]
   },
   {
     "companies": ["Oprah Winfrey Network", "HBO", "Netflix"],
-    "category": "Entertainment",
     "prohibited_words": ["show", "series", "episode", "streaming", "network"]
   },
   {
     "companies": ["Family Feud", "Jeopardy", "Wheel of Fortune"],
-    "category": "Television",
     "prohibited_words": ["game show", "contestant", "host", "prize", "questions"]
   },
   {
     "companies": ["Google", "Bing", "DuckDuckGo"],
-    "category": "Technology",
     "prohibited_words": ["search", "engine", "internet", "web", "results"]
   },
   {
     "companies": ["Amazon", "eBay", "Etsy"],
-    "category": "E-Commerce",
     "prohibited_words": ["online", "marketplace", "shopping", "seller", "buyer"]
   },
   {
     "companies": ["Netflix", "Hulu", "Disney+"],
-    "category": "Entertainment",
     "prohibited_words": ["streaming", "movies", "shows", "subscription", "video"]
   },
   {
     "companies": ["Facebook", "Twitter", "LinkedIn"],
-    "category": "Social Media",
     "prohibited_words": ["post", "like", "follow", "friend", "feed"]
   },
   {
     "companies": ["Nvidia", "AMD", "Intel"],
-    "category": "Technology",
     "prohibited_words": ["processor", "chip", "graphics", "computer", "hardware"]
   },
   {
+    "companies": ["GIMP", "Photoshop", "Microsoft Paint"],
+    "prohibited_words": ["edit", "photo", "image", "layers", "brush"]
+  },
+  {
     "companies": ["OpenAI", "DeepMind", "Anthropic"],
-    "category": "Artificial Intelligence",
     "prohibited_words": ["AI", "machine learning", "model", "neural network", "chatbot"]
   },
   {
-    "companies": ["Zoom", "Microsoft Teams", "Google Meet"],
-    "category": "Communication",
+    "companies": ["Slack", "Teams", "Discord"],
+    "prohibited_words": ["chat", "channels", "voice", "workplace", "notifications"]
+  },
+  {
+    "companies": ["Zoom", "Facetime", "Google Meet"],
     "prohibited_words": ["video", "call", "conference", "meeting", "chat"]
   },
   {
     "companies": ["Tesla", "Rivian", "Lucid Motors"],
-    "category": "Automotive",
     "prohibited_words": ["electric", "car", "vehicle", "battery", "range"]
   },
   {
+    "companies": ["Mormonism", "Protestantism", "Catholicism"],
+    "prohibited_words": ["church", "bible", "Christian", "faith", "prayer"]
+  },
+  {
+    "companies": ["eBay", "Craigslist", "Facebook Marketplace"],
+    "prohibited_words": ["auction", "listing", "buy", "sell", "bid"]
+  },
+  {
     "companies": ["Patreon", "Ko-fi", "GoFundMe"],
-    "category": "Creator Platforms",
     "prohibited_words": ["support", "fans", "subscription", "creator", "donate"]
   }
 ]

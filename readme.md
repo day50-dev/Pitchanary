@@ -33,6 +33,13 @@
 - Guessing one of the other two immediately ends the round with zero points.
 
 
+### 4. **Fair Play and Integrity**
+
+- Avoid using synonyms or indirect references to prohibited words that clearly circumvent the rules (e.g., using “Washingtons” for “dollars”).
+- Pitches should rely on creative positioning and conceptual clues — not cryptic code words or slang.
+- Teams are encouraged to call out and resolve suspected rule violations with a group consensus or moderator decision.
+- The spirit of Pitchanary is honest, challenging, and fun gameplay for all participants.
+
 ##  How to Play
 
 ### Setup
