@@ -25,21 +25,6 @@
     margin-bottom: 1.5rem;
     user-select: none;
   }
-  .card-container {
-    background: white;
-    border-radius: 20px;
-    width: 360px;
-    height: 480px;
-    padding: 2.5rem 3rem;
-    box-shadow:
-      0 10px 20px rgba(0,0,0,0.12),
-      inset 0 0 10px #f0f0f0,
-      0 0 0 3px #4b6cb7;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    user-select: none;
-  }
   .category {
     font-weight: 600;
     font-size: 1.1rem;
@@ -58,14 +43,6 @@
     flex-direction: column;
     justify-content: center;
     gap: 12px;
-  }
-  .timer {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #27ae60;
-    text-align: center;
-    margin: 1rem 0 0 0;
-    user-select: none;
   }
   .buttons {
     margin-top: 2rem;
@@ -118,12 +95,11 @@
 
 <div class="card-container" aria-live="polite" aria-atomic="true" role="region" aria-label="Current card">
   <div class="companies" id="companies">Loading...</div>
-  <div class="prohibited"><strong>🚫</strong> <span id="prohibited">Loading...</span></div>
-  <div class="timer" id="timer">00:00</div>
+   <div class="prohibited"><div><strong>Don't Say</strong></div><span id="prohibited">Loading...</span></div>
 </div>
 
 <div class="buttons">
-  <button id="deathBtn">Death</button>
+  <div class="timer" id="timer">00:00</div>
   <button id="nextBtn" disabled>Next</button>
   <button id="correctBtn">Correct</button>
 </div>
