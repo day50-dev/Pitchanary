@@ -100,13 +100,6 @@ Given that:
 - For ties, play a sudden death round with a special tiebreaker card.
 
 
-## Variations
-
-- **Silent Mode**: Act out pitches without speaking.
-- **Reverse Pitch**: Guessers describe clues; pitcher guesses.
-- **Timed Mode**: Impose a time limit per pitch.
-
-
 ## Why Play?
 
 Pitchanary sharpens your skills in pitching, persuasion, and strategic thinking, making it perfect for entrepreneurs, marketers, or any fun group.
