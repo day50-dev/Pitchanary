@@ -104,8 +104,8 @@
     "prohibited_words": ["tea", "drink", "bottle", "sweet", "beverage"]
   },
   {
-    "companies": ["Oprah Winfrey Network", "HBO", "Netflix"],
-    "prohibited_words": ["show", "series", "episode", "streaming", "network"]
+    "companies": ["MTV", "HBO", "ESPN"],
+    "prohibited_words": ["TV", "network", "show", "watch", "episode"]
   },
   {
     "companies": ["Family Feud", "Jeopardy", "Wheel of Fortune"],

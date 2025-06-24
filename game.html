@@ -32,18 +32,6 @@
     margin-bottom: 1.5rem;
     letter-spacing: 0.04em;
   }
-  .companies {
-    font-size: 1.8rem;
-    font-weight: 900;
-    letter-spacing: 0.04em;
-    color: #2c3e50;
-    margin-bottom: 2rem;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 12px;
-  }
   .buttons {
     margin-top: 2rem;
     display: flex;
@@ -157,11 +145,11 @@
     companiesEl.innerHTML = card.companies
       .map((company, i) => {
         if (i === companyRoundIndex) {
-          return `<span style="color:green;">✅ ${company}</span>`;
+          return `<div class="choice yes">✅ ${company}</div>`;
         } else {
-          return `<span style="color:#c0392b;">💀 ${company}</span>`;
+          return `<div class="choice no">💀 ${company}</div>`;
         }
-      }).join("<br>");
+      }).join("");
 
     prohibitedEl.textContent = card.prohibited_words.join(", ");
 

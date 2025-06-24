@@ -1,5 +1,4 @@
 /* styles.css */
-    width: 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@400;700&display=swap');
 :root {
     --primary: #2c3e50;
@@ -10,11 +9,17 @@
     --text: #000000;
     --textSecondary: #444444;
     --border: #2F2F2F;
-    --success: #10b981;
+    --success: #208F6C;
     --warning: #f59e0b;
-    --error: #ef4444;
+    --error: #c0392b;
     --font-family: 'Sans-serif', sans-serif;
     --border-radius: 8px;
+}
+.yes {
+    color: var(--success);
+}
+.no {
+    color: var(--error);
 }
 
 body {
@@ -148,9 +153,27 @@ a,
     font-size:0.8em;
     font-weight: 700;
 }
-.companies span {
+.companies {
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+}
+.choice {
+    font-size: 2rem;
+    margin: 1.5rem 0;
+}
+.companies div {
     white-space: nowrap;
     text-align: left;
+}
+.companies .no {
 }
 @media (max-width: 768px) {
     h1 {
